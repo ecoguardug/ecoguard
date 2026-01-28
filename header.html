@@ -1,175 +1,85 @@
 <header class="header">
   <div class="container">
-    <!-- Logo space – replace src with your real logo URL later -->
+    <!-- Logo space – replace src with your real logo URL when ready -->
     <a href="/" class="logo">
       <img 
         src="https://via.placeholder.com/220x60/1a5c44/ffffff?text=EcoGUARD+Logo" 
         alt="EcoGUARD Initiative Uganda Logo" 
         style="max-height: 60px; height: auto; display: block;"
       />
-      <!-- Fallback if image fails -->
       <span class="logo-text">EcoGUARD Initiative Uganda</span>
     </a>
 
-    <!-- Hamburger toggle button (visible only on mobile) -->
     <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
       <i class="fas fa-bars"></i>
     </button>
 
-    <!-- Navigation links -->
     <nav class="nav-menu">
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#what-we-do">What We Do</a></li>
+        
+        <!-- Dropdown with icons -->
+        <li class="dropdown">
+          <a href="#what-we-do" class="dropdown-toggle">
+            What We Do <i class="fas fa-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#waste-management">
+                <i class="fas fa-recycle"></i> Engineering-based Waste Management
+              </a>
+            </li>
+            <li>
+              <a href="#tree-planting">
+                <i class="fas fa-tree"></i> Tree Planting & Reforestation
+              </a>
+            </li>
+            <li>
+              <a href="#water-conservation">
+                <i class="fas fa-tint"></i> Water Conservation Projects
+              </a>
+            </li>
+            <li>
+              <a href="#renewable-energy">
+                <i class="fas fa-solar-panel"></i> Renewable Energy Solutions
+              </a>
+            </li>
+            <li>
+              <a href="#eco-innovation">
+                <i class="fas fa-lightbulb"></i> Eco-Innovation Labs
+              </a>
+            </li>
+            <li>
+              <a href="#environmental-education">
+                <i class="fas fa-book-open"></i> Environmental Education
+              </a>
+            </li>
+            <li>
+              <a href="#clean-up-campaigns">
+                <i class="fas fa-broom"></i> Clean-Up Campaigns
+              </a>
+            </li>
+            <li>
+              <a href="#green-entrepreneurship">
+                <i class="fas fa-hand-holding-usd"></i> Green Entrepreneurship
+              </a>
+            </li>
+          </ul>
+        </li>
+        
         <li><a href="#objectives">Objectives</a></li>
         <li><a href="#get-involved">Get Involved</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li class="donate-li">
+          <a href="#donate" class="donate-btn">Donate Now</a>
+        </li>
       </ul>
     </nav>
   </div>
 </header>
 
-<style>
-  :root {
-    --primary: #1a5c44;
-    --primary-dark: #0f3d2c;
-    --accent: #a8d5ba;
-    --text: #e0f2e9;
-    --bg: #ffffff;
-    --shadow: rgba(0,0,0,0.1);
-  }
-
-  * { margin:0; padding:0; box-sizing:border-box; }
-
-  .header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background: var(--bg);
-    box-shadow: 0 2px 10px var(--shadow);
-    z-index: 1000;
-    transition: background 0.3s ease;
-  }
-
-  .header.scrolled {
-    background: rgba(255,255,255,0.98);
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-  }
-
-  .logo img {
-    transition: transform 0.3s ease;
-  }
-
-  .logo:hover img {
-    transform: scale(1.05);
-  }
-
-  .logo-text {
-    display: none;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary);
-  }
-
-  /* Navigation */
-  .nav-menu {
-    display: flex;
-  }
-
-  .nav-menu ul {
-    list-style: none;
-    display: flex;
-    gap: 2.2rem;
-    margin: 0;
-  }
-
-  .nav-menu a {
-    color: var(--primary-dark);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.05rem;
-    transition: color 0.3s ease, transform 0.2s;
-  }
-
-  .nav-menu a:hover {
-    color: var(--accent);
-    transform: translateY(-2px);
-  }
-
-  /* Hamburger button */
-  .nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    color: var(--primary);
-    cursor: pointer;
-    padding: 10px;
-  }
-
-  /* Mobile styles */
-  @media (max-width: 900px) {
-    .nav-toggle {
-      display: block;
-    }
-
-    .nav-menu {
-      position: fixed;
-      top: 80px;
-      left: 0;
-      width: 100%;
-      background: var(--bg);
-      transform: translateY(-100%);
-      transition: transform 0.4s ease-in-out;
-      box-shadow: 0 4px 15px var(--shadow);
-      z-index: 999;
-      padding: 1.5rem 0;
-    }
-
-    .nav-menu.active {
-      transform: translateY(0);
-    }
-
-    .nav-menu ul {
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .nav-menu li {
-      width: 100%;
-    }
-
-    .nav-menu a {
-      display: block;
-      padding: 1.2rem 2rem;
-      font-size: 1.2rem;
-      border-bottom: 1px solid #eee;
-    }
-
-    .nav-menu a:last-child {
-      border-bottom: none;
-    }
-  }
-</style>
-
-<!-- Minimal JavaScript for toggle + icon change -->
+<!-- Minimal JavaScript for hamburger + dropdown toggle -->
 <script>
   const toggleBtn = document.querySelector('.nav-toggle');
   const menu = document.querySelector('.nav-menu');
@@ -177,24 +87,34 @@
 
   toggleBtn.addEventListener('click', () => {
     const isActive = menu.classList.toggle('active');
-    
-    // Update ARIA for accessibility
     toggleBtn.setAttribute('aria-expanded', isActive);
-    
-    // Swap icon: bars → times (X)
     icon.className = isActive ? 'fas fa-times' : 'fas fa-bars';
   });
 
-  // Optional: close menu when clicking a link (good for mobile)
+  // Close menu when clicking links (mobile)
   document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
-      menu.classList.remove('active');
-      toggleBtn.setAttribute('aria-expanded', 'false');
-      icon.className = 'fas fa-bars';
+      if (window.innerWidth <= 900) {
+        menu.classList.remove('active');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        icon.className = 'fas fa-bars';
+      }
     });
   });
 
-  // Subtle scroll effect
+  // Mobile dropdown toggle
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 900) {
+        e.preventDefault();
+        const parent = toggle.parentElement;
+        parent.classList.toggle('active');
+      }
+    });
+  });
+
+  // Optional scroll effect
   window.addEventListener('scroll', () => {
     document.querySelector('.header').classList.toggle('scrolled', window.scrollY > 50);
   });
