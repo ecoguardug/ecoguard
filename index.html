@@ -155,6 +155,20 @@
       .tagline { font-size: 1.3rem; }
     }
   </style>
+  <!-- Load header -->
+<div id="header-placeholder"></div>
+
+<script>
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    })
+    .catch(err => console.error('Header load failed:', err));
+</script>
+
+<!-- Then load the JS -->
+<script src="script-header.js"></script>
 </head>
 <body>
   <section class="hero">

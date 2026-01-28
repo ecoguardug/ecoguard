@@ -1,10 +1,9 @@
+<!-- header.html fragment -->
 <header class="header">
-  
   <div class="container">
-    <!-- Logo space – replace src with your real logo URL when ready -->
     <a href="/" class="logo">
       <img 
-        src="/Ecoguard Initiative Uganda Logo - Earthy Aesthetic (1).png" 
+        src="./assets/logo.png" 
         alt="EcoGUARD Initiative Uganda Logo" 
         style="max-height: 60px; height: auto; display: block;"
       />
@@ -17,106 +16,30 @@
 
     <nav class="nav-menu">
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        
-        <!-- Dropdown with icons -->
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About</a></li>
         <li class="dropdown">
-          <a href="#what-we-do" class="dropdown-toggle">
+          <a href="/what-we-do.html" class="dropdown-toggle">
             What We Do <i class="fas fa-chevron-down"></i>
           </a>
           <ul class="dropdown-menu">
-            <li>
-              <a href="#waste-management">
-                <i class="fas fa-recycle"></i> Engineering-based Waste Management
-              </a>
-            </li>
-            <li>
-              <a href="#tree-planting">
-                <i class="fas fa-tree"></i> Tree Planting & Reforestation
-              </a>
-            </li>
-            <li>
-              <a href="#water-conservation">
-                <i class="fas fa-tint"></i> Water Conservation Projects
-              </a>
-            </li>
-            <li>
-              <a href="#renewable-energy">
-                <i class="fas fa-solar-panel"></i> Renewable Energy Solutions
-              </a>
-            </li>
-            <li>
-              <a href="#eco-innovation">
-                <i class="fas fa-lightbulb"></i> Eco-Innovation Labs
-              </a>
-            </li>
-            <li>
-              <a href="#environmental-education">
-                <i class="fas fa-book-open"></i> Environmental Education
-              </a>
-            </li>
-            <li>
-              <a href="#clean-up-campaigns">
-                <i class="fas fa-broom"></i> Clean-Up Campaigns
-              </a>
-            </li>
-            <li>
-              <a href="#green-entrepreneurship">
-                <i class="fas fa-hand-holding-usd"></i> Green Entrepreneurship
-              </a>
-            </li>
+            <li><a href="/what-we-do.html#waste-management"><i class="fas fa-recycle"></i> Engineering-based Waste Management</a></li>
+            <li><a href="/what-we-do.html#tree-planting"><i class="fas fa-tree"></i> Tree Planting & Reforestation</a></li>
+            <li><a href="/what-we-do.html#water-conservation"><i class="fas fa-tint"></i> Water Conservation Projects</a></li>
+            <li><a href="/what-we-do.html#renewable-energy"><i class="fas fa-solar-panel"></i> Renewable Energy Solutions</a></li>
+            <li><a href="/what-we-do.html#eco-innovation"><i class="fas fa-lightbulb"></i> Eco-Innovation Labs</a></li>
+            <li><a href="/what-we-do.html#environmental-education"><i class="fas fa-book-open"></i> Environmental Education</a></li>
+            <li><a href="/what-we-do.html#clean-up-campaigns"><i class="fas fa-broom"></i> Clean-Up Campaigns</a></li>
+            <li><a href="/what-we-do.html#green-entrepreneurship"><i class="fas fa-hand-holding-usd"></i> Green Entrepreneurship</a></li>
           </ul>
         </li>
-        
-        <li><a href="#objectives">Objectives</a></li>
-        <li><a href="#get-involved">Get Involved</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="/objectives.html">Objectives</a></li>
+        <li><a href="/get-involved.html">Get Involved</a></li>
+        <li><a href="/contact.html">Contact</a></li>
         <li class="donate-li">
-          <a href="#donate" class="donate-btn">Donate Now</a>
+          <a href="/donate.html" class="donate-btn">Donate Now</a>
         </li>
       </ul>
     </nav>
   </div>
 </header>
-
-<!-- Minimal JavaScript for hamburger + dropdown toggle -->
-<script>
-  const toggleBtn = document.querySelector('.nav-toggle');
-  const menu = document.querySelector('.nav-menu');
-  const icon = toggleBtn.querySelector('i');
-
-  toggleBtn.addEventListener('click', () => {
-    const isActive = menu.classList.toggle('active');
-    toggleBtn.setAttribute('aria-expanded', isActive);
-    icon.className = isActive ? 'fas fa-times' : 'fas fa-bars';
-  });
-
-  // Close menu when clicking links (mobile)
-  document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 900) {
-        menu.classList.remove('active');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-        icon.className = 'fas fa-bars';
-      }
-    });
-  });
-
-  // Mobile dropdown toggle
-  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-  dropdownToggles.forEach(toggle => {
-    toggle.addEventListener('click', (e) => {
-      if (window.innerWidth <= 900) {
-        e.preventDefault();
-        const parent = toggle.parentElement;
-        parent.classList.toggle('active');
-      }
-    });
-  });
-
-  // Optional scroll effect
-  window.addEventListener('scroll', () => {
-    document.querySelector('.header').classList.toggle('scrolled', window.scrollY > 50);
-  });
-</script>
