@@ -1,284 +1,157 @@
-/* ==============================================
-   EcoGUARD Initiative Uganda - Header Styles
-   ============================================== */
-
-:root {
-  --primary: #1a5c44;         /* Deep forest green */
-  --primary-dark: #0f3d2c;
-  --accent: #a8d5ba;           /* Light green accent */
-  --text: #e0f2e9;
-  --bg: #ffffff;
-  --shadow: rgba(0,0,0,0.1);
+/* Top green bar */
+.top-bar {
+  background: #1a5c44; /* your --primary or darker green */
+  color: white;
+  font-size: 0.9rem;
+  padding: 8px 0;
 }
 
-.header {
+.top-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact-info span {
+  margin-right: 1.5rem;
+}
+
+.contact-info i, .social-icons i {
+  margin-right: 6px;
+}
+
+.social-icons a {
+  color: white;
+  margin-left: 12px;
+  font-size: 1.1rem;
+}
+
+/* Main header */
+.main-header {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
-  width: 100%;
-  background: var(--bg);
-  box-shadow: 0 2px 10px var(--shadow);
   z-index: 1000;
-  transition: background 0.3s ease;
 }
 
-.header.scrolled {
-  background: rgba(255,255,255,0.98);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.main-header .container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   height: 80px;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
 .logo img {
-  transition: transform 0.3s ease;
+  max-height: 60px;
 }
 
-.logo:hover img {
-  transform: scale(1.05);
-}
-
-.logo-text {
+/* Hamburger – 3 lines style like many sites (including similar to Manster) */
+.hamburger {
   display: none;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--primary);
-}
-
-/* Navigation */
-.nav-menu ul {
-  list-style: none;
-  display: flex;
-  gap: 2.2rem;
-  margin: 0;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
   padding: 0;
 }
 
-.nav-menu a {
-  color: var(--primary-dark);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.05rem;
-  transition: color 0.3s ease, transform 0.2s;
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: var(--primary);
+  transition: all 0.3s;
 }
 
-.nav-menu a:hover {
-  color: var(--accent);
-  transform: translateY(-2px);
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
 }
 
-/* Donate button */
-.donate-li {
-  margin-left: auto;
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Nav menu */
+.nav-menu {
+  display: flex;
+}
+
+.nav-menu ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  align-items: center;
 }
 
 .donate-btn {
-  display: inline-block;
   background: var(--accent);
   color: var(--primary-dark);
   padding: 10px 24px;
   border-radius: 30px;
-  font-weight: 600;
-  font-size: 1.05rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  font-weight: bold;
 }
 
-.donate-btn:hover {
-  background: #8bc3a0;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  color: white;
-}
-
-/* Hamburger button */
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  color: var(--primary);
-  cursor: pointer;
-  padding: 10px;
-}
-
-/* Dropdown */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-toggle {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-}
-
-/* Hide dropdown by default – strict */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: var(--bg);
-  box-shadow: 0 8px 20px var(--shadow);
-  border-radius: 8px;
-  min-width: 280px;
-  z-index: 1001;
-  overflow: hidden;
-  pointer-events: none;          /* Prevent interaction when hidden */
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-/* Show ONLY on hover (desktop/large screens) */
-@media (min-width: 901px) {
-  .dropdown:hover .dropdown-menu {
-    display: block;
-    pointer-events: auto;
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Dropdown items */
-.dropdown-menu li {
-  width: 100%;
-}
-
-.dropdown-menu a {
-  display: flex;
-  align-items: center;
-  padding: 12px 20px;
-  color: var(--primary-dark);
-  text-decoration: none;
-  font-size: 1rem;
-  transition: background 0.3s ease;
-}
-
-.dropdown-menu a:hover {
-  background: #f0f7f4;
-}
-
-/* Dropdown icons */
-.dropdown-menu a i {
-  margin-right: 12px;
-  width: 20px;
-  text-align: center;
-  color: var(--primary);
-  font-size: 1.1rem;
-  opacity: 0.9;
-  transition: color 0.3s ease;
-}
-
-.dropdown-menu a:hover i {
-  color: var(--accent);
-  opacity: 1;
-}
-
-/* Mobile responsive */
+/* Mobile */
 @media (max-width: 900px) {
-  .nav-toggle {
-    display: block;
+  .hamburger {
+    display: flex;
   }
 
   .nav-menu {
     position: fixed;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background: var(--bg);
-    transform: translateY(-100%);
-    transition: transform 0.4s ease-in-out;
-    box-shadow: 0 4px 15px var(--shadow);
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: #0f3d2c; /* dark green overlay like many eco sites */
+    color: white;
+    transition: right 0.4s ease;
     z-index: 999;
-    padding: 1.5rem 0;
+    padding-top: 80px;
   }
 
   .nav-menu.active {
-    transform: translateY(0);
+    right: 0;
   }
 
   .nav-menu ul {
     flex-direction: column;
-    gap: 0;
-  }
-
-  .nav-menu li {
-    width: 100%;
+    align-items: flex-start;
+    padding: 2rem;
   }
 
   .nav-menu a {
-    display: block;
-    padding: 1.2rem 2rem;
-    font-size: 1.2rem;
-    border-bottom: 1px solid #eee;
-  }
-
-  .donate-li {
-    margin-left: 0;
-    margin-top: 1rem;
+    color: white;
+    font-size: 1.3rem;
+    padding: 1rem 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 
   .donate-btn {
-    display: block;
+    margin-top: 1.5rem;
+    width: 100%;
     text-align: center;
-    padding: 1.2rem;
-    font-size: 1.3rem;
-    border-radius: 8px;
   }
 
-  /* Mobile dropdown – tap to show */
-  .dropdown .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    border-radius: 0;
-    display: none;
-    background: #f8fafc;
-    padding-left: 20px;
-  }
-
-  .dropdown.active .dropdown-menu {
-    display: block;
-  }
-
-  .dropdown-toggle {
-    justify-content: space-between;
-    padding: 1.2rem 2rem;
-    border-bottom: 1px solid #eee;
-  }
-
-  .dropdown-toggle i {
-    transition: transform 0.3s;
-  }
-
-  .dropdown.active .dropdown-toggle i {
-    transform: rotate(180deg);
-  }
-
-  .dropdown-menu a {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    border-bottom: 1px solid #eee;
-  }
-
-  .dropdown-menu a i {
-    margin-right: 15px;
-    font-size: 1.3rem;
+  /* Close X style in top-right */
+  .nav-menu::before {
+    content: '×';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
   }
 }

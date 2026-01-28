@@ -1,19 +1,33 @@
-<!-- header.html fragment -->
-<header class="header">
+<!-- Top green contact bar (like Manster) -->
+<div class="top-bar">
+  <div class="container">
+    <div class="contact-info">
+      <span><i class="fas fa-map-marker-alt"></i> Plot 1926, Ktaliwajjala Zone A</span>
+      <span><i class="fas fa-phone"></i> +256 393 194 062</span>
+      <span><i class="fas fa-envelope"></i> info@ecouganda.org</span>
+      <span><i class="fas fa-clock"></i> Open hours: 9am-6pm</span>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Main header with logo, nav, hamburger -->
+<header class="main-header">
   <div class="container">
     <a href="/" class="logo">
-      <img 
-        src="./assets/Ecoguard Initiative Uganda Logo - Earthy Aesthetic (1).png" 
-        alt="EcoGUARD Initiative Uganda Logo" 
-        style="max-height: 60px; height: auto; display: block;"
-      />
-      
+      <img src="./assets/logo.png" alt="EcoGUARD Initiative Uganda">
     </a>
 
-    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      <i class="fas fa-bars"></i>
+    <!-- Hamburger -->
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
     </button>
 
+    <!-- Navigation -->
     <nav class="nav-menu">
       <ul>
         <li><a href="/">Home</a></li>
@@ -23,22 +37,15 @@
             What We Do <i class="fas fa-chevron-down"></i>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="/what-we-do.html#waste-management"><i class="fas fa-recycle"></i> Engineering-based Waste Management</a></li>
-            <li><a href="/what-we-do.html#tree-planting"><i class="fas fa-tree"></i> Tree Planting & Reforestation</a></li>
-            <li><a href="/what-we-do.html#water-conservation"><i class="fas fa-tint"></i> Water Conservation Projects</a></li>
-            <li><a href="/what-we-do.html#renewable-energy"><i class="fas fa-solar-panel"></i> Renewable Energy Solutions</a></li>
-            <li><a href="/what-we-do.html#eco-innovation"><i class="fas fa-lightbulb"></i> Eco-Innovation Labs</a></li>
-            <li><a href="/what-we-do.html#environmental-education"><i class="fas fa-book-open"></i> Environmental Education</a></li>
-            <li><a href="/what-we-do.html#clean-up-campaigns"><i class="fas fa-broom"></i> Clean-Up Campaigns</a></li>
-            <li><a href="/what-we-do.html#green-entrepreneurship"><i class="fas fa-hand-holding-usd"></i> Green Entrepreneurship</a></li>
+            <!-- your items -->
+            <li><a href="#waste"><i class="fas fa-recycle"></i> Waste Management</a></li>
+            <!-- etc. -->
           </ul>
         </li>
         <li><a href="/objectives.html">Objectives</a></li>
         <li><a href="/get-involved.html">Get Involved</a></li>
         <li><a href="/contact.html">Contact</a></li>
-        <li class="donate-li">
-          <a href="/donate.html" class="donate-btn">Donate Now</a>
-        </li>
+        <li><a href="/donate.html" class="donate-btn">Donate</a></li>
       </ul>
     </nav>
   </div>
