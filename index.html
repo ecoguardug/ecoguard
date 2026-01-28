@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EcoGuard Initiative Uganda | Coming Soon</title>
-  <meta name="description" content="EcoGuard Initiative Uganda – Safeguarding Uganda's ecosystems, promoting climate resilience, and empowering communities for a sustainable tomorrow."/>
+  <title>EcoGUARD Initiative Uganda | Coming Soon</title>
+  <meta name="description" content="EcoGUARD Initiative Uganda – Youth-led engineering movement fighting climate change, restoring biodiversity, and promoting sustainability across Uganda. Launching soon!"/>
   
-  <!-- Google Fonts: Modern & readable -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   
-  <!-- Font Awesome icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
@@ -19,139 +19,184 @@
       --primary: #1a5c44;
       --primary-dark: #0f3d2c;
       --accent: #a8d5ba;
-      --light: #f8fafc;
       --text: #e0f2e9;
     }
     
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
     
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to bottom, var(--primary), var(--primary-dark));
+      background: var(--primary-dark);
       color: var(--text);
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
       overflow-x: hidden;
     }
     
-    .container {
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      background: linear-gradient(rgba(15,61,44,0.65), rgba(26,92,68,0.55)), url('https://p2.piqsels.com/preview/459/610/478/uganda-jungle-forest-hill.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      max-width: 960px;
-      animation: fadeIn 1.8s ease-out;
+      padding: 0 20px;
     }
     
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
+    .hero-content {
+      max-width: 900px;
+      animation: fadeUp 1.5s ease-out;
+    }
+    
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     
     .logo {
       font-family: 'Playfair Display', serif;
-      font-size: 3.8rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-bottom: 0.5rem;
-      color: white;
-      text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      font-size: 4.5rem;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.6);
     }
     
-    .subtitle {
-      font-size: 1.35rem;
-      font-weight: 400;
-      opacity: 0.92;
-      margin-bottom: 2.5rem;
-      letter-spacing: 0.5px;
+    .tagline {
+      font-size: 1.6rem;
+      font-weight: 300;
+      margin: 1rem 0 2rem;
+      opacity: 0.95;
     }
     
     h2 {
-      font-size: 5.5rem;
+      font-size: 5rem;
       font-weight: 700;
-      margin: 1rem 0 1.5rem;
-      line-height: 0.95;
-      text-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      margin: 1rem 0;
+      text-shadow: 0 6px 15px rgba(0,0,0,0.5);
     }
     
     .message {
-      font-size: 1.25rem;
-      line-height: 1.8;
+      font-size: 1.3rem;
       max-width: 720px;
       margin: 0 auto 3rem;
-      opacity: 0.9;
+      line-height: 1.7;
+    }
+    
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 60px 20px;
+      background: linear-gradient(to bottom, var(--primary), var(--primary-dark));
+    }
+    
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+    
+    .gallery-item .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.6);
+      padding: 12px;
+      font-size: 1rem;
+      text-align: center;
     }
     
     .social {
-      margin: 3rem 0 2rem;
+      padding: 40px 20px;
+      text-align: center;
     }
     
     .social a {
       color: white;
       font-size: 2.2rem;
-      margin: 0 1.4rem;
-      transition: all 0.35s ease;
-      opacity: 0.88;
+      margin: 0 1.5rem;
+      transition: all 0.4s;
     }
     
     .social a:hover {
-      transform: translateY(-10px) scale(1.15);
-      opacity: 1;
+      transform: translateY(-10px);
       color: var(--accent);
     }
     
-    .credit {
-      margin-top: 4rem;
+    footer {
+      text-align: center;
+      padding: 30px 20px;
       font-size: 0.95rem;
-      opacity: 0.75;
+      opacity: 0.8;
+      background: var(--primary-dark);
     }
     
-    .credit a {
+    footer a {
       color: var(--accent);
       text-decoration: none;
-      font-weight: 500;
-    }
-    
-    .credit a:hover {
-      text-decoration: underline;
     }
     
     @media (max-width: 768px) {
-      h2          { font-size: 4.2rem; }
-      .logo       { font-size: 3rem; }
-      .subtitle   { font-size: 1.15rem; }
-      .message    { font-size: 1.1rem; }
-      .social a   { font-size: 1.9rem; margin: 0 1rem; }
+      .logo { font-size: 3.2rem; }
+      h2 { font-size: 3.8rem; }
+      .tagline { font-size: 1.3rem; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1 class="logo">EcoGuard Initiative Uganda</h1>
-    <p class="subtitle">Safeguarding Nature • Empowering Communities • Building Resilience</p>
-    
-    <h2>Coming Soon</h2>
-    
-    <p class="message">
-      We're crafting a powerful digital home for environmental conservation, climate education, 
-      reforestation efforts, and sustainable livelihoods across Uganda.<br><br>
-      Our full platform launches shortly — join us in protecting Uganda's rich biodiversity for generations to come.
-    </p>
-    
-    <div class="social">
-      <a href="https://facebook.com/ecoguardug" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://x.com/ecoguardug" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
-      <a href="https://instagram.com/ecoguardinitiative" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-      <!-- Add more if you have them, e.g. LinkedIn, WhatsApp channel, etc. -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="logo">EcoGUARD Initiative Uganda</h1>
+      <p class="tagline">Youth-Led • Engineering-Driven • Environment-First</p>
+      <h2>Coming Soon</h2>
+      <p class="message">
+        A powerful platform launching to showcase our work in fighting climate change, restoring Uganda's biodiversity, 
+        promoting sustainable engineering solutions, and empowering young leaders for a greener future.
+      </p>
     </div>
-    
-    <div class="credit">
-      Designed & Developed by <a href="https://owenwebsolution.com" target="_blank" rel="noopener">Owen Web Solution</a>
+  </section>
+
+  <section class="gallery">
+    <div class="gallery-item">
+      <img src="https://www.radiocomnetu.org/voiceoflango/wp-content/uploads/sites/22/2025/05/cl1-1024x683.jpg" alt="Youth planting trees">
+      <div class="caption">Tree Planting & Reforestation Campaigns</div>
     </div>
-  </div>
+    <div class="gallery-item">
+      <img src="https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvZmw1MTE0NzU2OTM5NS1pbWFnZS1rdWNnMW0wNi5qcGc.jpg" alt="Community environmental action">
+      <div class="caption">Community Engagement & Clean-Ups</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://blogsmedia.lse.ac.uk/blogs.dir/57/files/2024/02/solar-panels-1200px.jpg" alt="Solar renewable energy">
+      <div class="caption">Renewable Energy Solutions (Solar & Biogas)</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://p2.piqsels.com/preview/459/610/478/uganda-jungle-forest-hill.jpg" alt="Uganda lush forest">
+      <div class="caption">Protecting Uganda's Natural Ecosystems</div>
+    </div>
+  </section>
+
+  <section class="social">
+    <a href="https://facebook.com/ecoguardug" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://x.com/ecoguardug" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://instagram.com/ecoguardinitiative" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+  </section>
+
+  <footer>
+    © 2026 EcoGUARD Initiative Uganda • All rights reserved<br>
+    Designed & Developed by <a href="https://owenwebsolution.com" target="_blank" rel="noopener">Owen Web Solution</a>
+  </footer>
 </body>
 </html>
