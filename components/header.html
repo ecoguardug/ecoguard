@@ -1,0 +1,71 @@
+<!-- components/header.html -->
+<header class="sticky top-0 z-50 bg-white shadow-md">
+  <!-- Top contact bar -->
+  <div class="bg-green-800 text-white text-sm py-2">
+    <div class="container mx-auto px-4 flex flex-wrap justify-between items-center gap-4">
+      <div class="flex flex-wrap gap-x-6 gap-y-1">
+        <span><i class="fas fa-map-marker-alt mr-1"></i> Plot 1926, Ktaliiwajjala Zone A</span>
+        <span><i class="fas fa-phone-alt mr-1"></i> +256 393 194 062</span>
+        <span><i class="fas fa-envelope mr-1"></i> info@ecoguardinitiativeuganda.org</span>
+      </div>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-green-300 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-green-300 transition"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="hover:text-green-300 transition"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main navigation -->
+  <nav class="bg-white" x-data="{ open: false, dropdownOpen: false }">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <a href="/" class="flex items-center">
+          <img src="assets/Ecoguard Initiative Uganda Logo - Earthy Aesthetic (1) (1).png" alt="EcoGUARD" class="h-14 w-auto">
+        </a>
+
+        <!-- Hamburger (mobile) -->
+        <button @click="open = !open" class="lg:hidden text-green-800 focus:outline-none" aria-label="Toggle menu" :aria-expanded="open">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" x-show="!open"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" x-show="open"></path>
+          </svg>
+        </button>
+
+        <!-- Menu items -->
+        <div class="hidden lg:flex lg:items-center lg:space-x-10 absolute lg:static top-full left-0 w-full lg:w-auto bg-white lg:bg-transparent shadow-lg lg:shadow-none mt-2 lg:mt-0 p-6 lg:p-0" :class="{ 'block': open, 'hidden': !open }" x-show.transition="open" @click.outside="open = false">
+          <div class="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
+            <a href="/" class="text-gray-800 hover:text-green-700 font-medium transition">Home</a>
+            <a href="about.html" class="text-gray-800 hover:text-green-700 font-medium transition">About</a>
+
+            <!-- Dropdown -->
+            <div class="relative group">
+              <button @click="dropdownOpen = !dropdownOpen" class="text-gray-800 hover:text-green-700 font-medium transition flex items-center gap-1" :class="{ 'text-green-700': dropdownOpen }">
+                What We Do
+                <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': dropdownOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-64 bg-white shadow-xl rounded-lg py-2 transition-all duration-200" :class="{ 'opacity-100 visible scale-100': dropdownOpen, 'opacity-0 invisible scale-95': !dropdownOpen }" @click.outside="dropdownOpen = false">
+                <a href="programs.html#waste" class="block px-5 py-2.5 text-gray-700 hover:bg-green-50 hover:text-green-700">Engineering-based Waste Management</a>
+                <a href="programs.html#tree" class="block px-5 py-2.5 text-gray-700 hover:bg-green-50 hover:text-green-700">Tree Planting & Reforestation</a>
+                <a href="programs.html#water" class="block px-5 py-2.5 text-gray-700 hover:bg-green-50 hover:text-green-700">Water Conservation Projects</a>
+                <a href="programs.html#energy" class="block px-5 py-2.5 text-gray-700 hover:bg-green-50 hover:text-green-700">Renewable Energy Solutions</a>
+                <a href="programs.html#innovation" class="block px-5 py-2.5 text-gray-700 hover:bg-green-50 hover:text-green-700">Eco-Innovation Labs</a>
+                <a href="programs.html#education" class="block px-5 py-2.5 text-gray-700 hover:bg-green-50 hover:text-green-700">Environmental Education</a>
+                <a href="programs.html#cleanup" class="block px-5 py-2.5 text-gray-700 hover:bg-green-50 hover:text-green-700">Clean-Up Campaigns</a>
+                <a href="programs.html#entrepreneurship" class="block px-5 py-2.5 text-gray-700 hover:bg-green-50 hover:text-green-700">Green Entrepreneurship</a>
+              </div>
+            </div>
+
+            <a href="objectives.html" class="text-gray-800 hover:text-green-700 font-medium transition">Objectives</a>
+            <a href="get-involved.html" class="text-gray-800 hover:text-green-700 font-medium transition">Get Involved</a>
+            <a href="contact.html" class="text-gray-800 hover:text-green-700 font-medium transition">Contact</a>
+            <a href="donate.html" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-full font-semibold transition">Donate</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
