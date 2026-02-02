@@ -1,101 +1,308 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EcoGUARD - Home</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Tailwind CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <!-- Alpine.js CDN -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <!-- Font Awesome -->
-  <!-- Your other CSS links here -->
+  <style>
+    :root {
+      --forest-900: #0f3d2c;
+      --forest-700: #1a5c44;
+      --leaf-500: #3ea86d;
+      --mist: #eef8f2;
+    }
+    .grid-lines {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+  </style>
 </head>
-
-<body class="">
-  <!-- Header Placeholder -->
+<body class="bg-white text-gray-800 antialiased">
   <div id="header-placeholder"></div>
 
-  <main class="min-h-screen">
-    <section class="bg-[url(/assets/ecoguard-bg.webp)] bg-cover bg-center h-screen flex items-center justify-center">
-      <div
-        class="flex flex-col items-center justify-center h-full bg-black bg-opacity-50 text-center p-4 w-full md:w-1/2 md:h-1/2 rounded-lg">
-        <h1 class="text-4xl font-bold text-white">
-          Protecting Nature. Empowering Youth. Engineering a Greener Uganda.
-        </h1>
-        <p class="text-white mt-4 font-bold">
-          EcoGUARD Initiative Uganda is a youth-led environmental movement
-          driven by passionate engineering students and community leaders
-          working to safeguard our natural resources. Through science,
-          innovation, and grassroots action, we tackle climate change, restore
-          ecosystems, and promote sustainable practices. Together, we are
-          shaping a resilient future where people and nature thrive in
-          harmony.
-        </p>
-        <div>
-          <a href="/about.html"
-            class="mt-6 inline-block bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition">Become
-            a Green Champion</a>
+  <main>
+    <section class="relative isolate overflow-hidden">
+      <img src="assets/ecoguard-bg.webp" alt="Forest landscape in Uganda" class="absolute inset-0 -z-20 h-full w-full object-cover" />
+      <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/70 via-black/55 to-[var(--forest-900)]/90"></div>
+      <div class="absolute inset-0 -z-10 grid-lines"></div>
+      <div class="mx-auto flex min-h-[86vh] max-w-7xl items-center px-6 py-16 lg:px-10">
+        <div class="max-w-3xl">
+          <p class="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-green-100 backdrop-blur">
+            Youth-Led. Engineering-Driven. Community-Powered.
+          </p>
+          <h1 class="mt-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
+            Protecting Nature. Empowering Youth. Engineering a Greener Uganda.
+          </h1>
+          <p class="mt-6 max-w-2xl text-base leading-relaxed text-green-100 sm:text-lg">
+            EcoGUARD Initiative Uganda is a youth-led environmental movement driven by passionate engineering students and community leaders. Through science, innovation, and grassroots action, we tackle climate change, restore ecosystems, and promote sustainable practices for a resilient future.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="get-involved.html" class="inline-flex items-center rounded-full bg-[var(--leaf-500)] px-6 py-3 font-semibold text-white transition hover:bg-green-600">
+              Become a Green Champion
+            </a>
+            <a href="about.html" class="inline-flex items-center rounded-full border border-white/40 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur transition hover:bg-white/20">
+              Learn About Us
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section
-      class="bg-white bg-cover min-h-screen p-8 flex flex-col md:flex-row items-center md:items-start md:justify-center gap-8">
-      <div class="w-1/2">
-        <img src="/assets/map.png" alt="" class="w-auto h-auto rounded-lg shadow-lg drop-shadow-xl" />
-      </div>
-      <div class="w-1/2">
-        <h2 class="text-2xl font-bold text-black mt-4">
-          About EcoGUARD Initiative Uganda
-        </h2>
-        <p class="text-black mt-2">
-          EcoGUARD Initiative Uganda is a youth-led environmental movement
-          founded by passionate engineering students committed to protecting
-          nature and building a sustainable future. We believe that the health
-          of our environment is directly linked to the well-being of our
-          communities and future generations. By combining science,
-          technology, and grassroots action, we address critical challenges
-          such as climate change, deforestation, waste pollution, water
-          scarcity, and poor sanitation across Uganda. Through innovative
-          engineering solutions, community engagement, and environmental
-          education, we empower young people and local communities to become
-          active stewards of the environment. Our work ranges from tree
-          planting and clean-up campaigns to renewable energy projects,
-          eco-innovation labs, and green entrepreneurship programs. Together
-          with partners and volunteers, we are creating long-lasting
-          environmental impact while inspiring a new generation to lead
-          Uganda’s green transformation.
-        </p>
+    <section class="bg-[var(--mist)] py-16 sm:py-20">
+      <div class="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2 lg:items-center lg:px-10">
+        <div class="relative">
+          <div class="absolute -left-4 -top-4 h-28 w-28 rounded-full bg-[var(--leaf-500)]/20 blur-2xl"></div>
+          <img src="assets/map.png" alt="Map showing EcoGUARD outreach focus areas in Uganda" class="relative w-full rounded-2xl border border-green-100 bg-white p-2 shadow-2xl" />
+        </div>
+        <div>
+          <h2 class="text-3xl font-extrabold text-[var(--forest-900)] sm:text-4xl">About EcoGUARD Initiative Uganda</h2>
+          <p class="mt-5 leading-relaxed text-gray-700">
+            EcoGUARD Initiative Uganda is a youth-led environmental movement founded by passionate engineering students committed to protecting nature and building a sustainable future. We believe environmental health is directly linked to the well-being of communities and future generations.
+          </p>
+          <p class="mt-4 leading-relaxed text-gray-700">
+            By combining science, technology, and grassroots action, we address climate change, deforestation, waste pollution, water scarcity, and poor sanitation across Uganda. Our work spans tree planting, clean-up campaigns, renewable energy projects, eco-innovation labs, and green entrepreneurship.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- <section
-      class="bg-green-600 bg-cover min-h-screen p-8 flex flex-col md:flex-row items-center md:items-start md:justify-center gap-8">
-      <div class="w-1/2">
-        <h2 class="text-2xl font-bold text-white mt-4">
-          Our Mission
-        </h2>
-        <p class="text-white mt-2">
-          To empower youth and communities through engineering innovation and
-          environmental stewardship, fostering sustainable practices that
-          protect Uganda's natural resources and promote a greener future for
-          all.</p>
+    <section class="py-16 sm:py-20">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--leaf-500)]">What We Focus On</p>
+          <h3 class="mt-3 text-3xl font-extrabold text-[var(--forest-900)] sm:text-4xl">Engineering Solutions for Real Environmental Challenges</h3>
+        </div>
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="rounded-2xl border border-green-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <i class="fa-solid fa-recycle text-2xl text-[var(--leaf-500)]"></i>
+            <h4 class="mt-4 font-bold text-[var(--forest-900)]">Waste Management</h4>
+            <p class="mt-2 text-sm leading-relaxed text-gray-600">Community systems and practical engineering methods for cleaner neighborhoods.</p>
+          </article>
+          <article class="rounded-2xl border border-green-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <i class="fa-solid fa-tree text-2xl text-[var(--leaf-500)]"></i>
+            <h4 class="mt-4 font-bold text-[var(--forest-900)]">Reforestation</h4>
+            <p class="mt-2 text-sm leading-relaxed text-gray-600">Tree planting and restoration campaigns that strengthen ecosystems and livelihoods.</p>
+          </article>
+          <article class="rounded-2xl border border-green-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <i class="fa-solid fa-droplet text-2xl text-[var(--leaf-500)]"></i>
+            <h4 class="mt-4 font-bold text-[var(--forest-900)]">Water & Sanitation</h4>
+            <p class="mt-2 text-sm leading-relaxed text-gray-600">Water conservation projects and safe sanitation action for schools and communities.</p>
+          </article>
+          <article class="rounded-2xl border border-green-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <i class="fa-solid fa-solar-panel text-2xl text-[var(--leaf-500)]"></i>
+            <h4 class="mt-4 font-bold text-[var(--forest-900)]">Renewable Energy</h4>
+            <p class="mt-2 text-sm leading-relaxed text-gray-600">Local clean-energy ideas, student innovation, and climate-smart community pilots.</p>
+          </article>
+        </div>
       </div>
-      <div class="w-1/2">
-        <img src="/assets/mission.jpg" alt="" class="w-auto h-auto rounded-lg shadow-lg drop-shadow-xl" />
+    </section>
+
+    <section class="bg-white py-16">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div class="mb-8 flex items-end justify-between gap-4">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">Ecosystem Pulse</p>
+            <h3 class="mt-2 text-3xl font-extrabold text-emerald-950">Live Sustainability Infographic</h3>
+          </div>
+          <i class="fa-solid fa-earth-africa text-3xl text-emerald-600 ecg-float"></i>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-2">
+          <div class="rounded-2xl border border-emerald-100 bg-emerald-50/60 p-6">
+            <div class="space-y-4">
+              <div>
+                <div class="mb-2 flex items-center justify-between text-sm"><span class="font-medium text-gray-700">Restoration Readiness</span><span class="font-bold text-emerald-700">78%</span></div>
+                <div class="h-3 rounded-full bg-white"><div data-progress="78" class="ecg-progress h-3 rounded-full bg-emerald-600"></div></div>
+              </div>
+              <div>
+                <div class="mb-2 flex items-center justify-between text-sm"><span class="font-medium text-gray-700">Youth Engagement Capacity</span><span class="font-bold text-emerald-700">84%</span></div>
+                <div class="h-3 rounded-full bg-white"><div data-progress="84" class="ecg-progress h-3 rounded-full bg-emerald-500"></div></div>
+              </div>
+              <div>
+                <div class="mb-2 flex items-center justify-between text-sm"><span class="font-medium text-gray-700">Water Protection Coverage</span><span class="font-bold text-emerald-700">61%</span></div>
+                <div class="h-3 rounded-full bg-white"><div data-progress="61" class="ecg-progress h-3 rounded-full bg-teal-500"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-emerald-100 bg-white p-6 shadow-sm">
+            <p class="text-xs font-semibold uppercase tracking-[0.15em] text-emerald-600">Infographic Flow</p>
+            <div class="mt-3 grid grid-cols-4 items-center gap-2 text-center text-xs font-semibold text-gray-600">
+              <div class="rounded-lg bg-emerald-100 px-2 py-2">Assess</div>
+              <i class="fa-solid fa-arrow-right text-emerald-500"></i>
+              <div class="rounded-lg bg-emerald-100 px-2 py-2">Act</div>
+              <i class="fa-solid fa-arrow-right text-emerald-500"></i>
+            </div>
+            <div class="mt-2 grid grid-cols-4 items-center gap-2 text-center text-xs font-semibold text-gray-600">
+              <div class="rounded-lg bg-emerald-100 px-2 py-2">Train</div>
+              <i class="fa-solid fa-arrow-right text-emerald-500"></i>
+              <div class="rounded-lg bg-emerald-100 px-2 py-2">Track</div>
+              <i class="fa-solid fa-check-circle text-emerald-500"></i>
+            </div>
+            <p class="mt-4 text-sm text-gray-600">This pipeline keeps every project measurable, community-led, and aligned with long-term climate resilience goals.</p>
+          </div>
+        </div>
       </div>
-    </section> -->
+    </section>
+
+    <section class="py-16 sm:py-20">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+          <div class="max-w-2xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">Climate Strategy</p>
+            <h3 class="mt-2 text-3xl font-extrabold text-emerald-950 sm:text-4xl">From Offsetting to Insetting</h3>
+            <p class="mt-3 text-sm text-gray-600">We focus on interventions inside local value chains, communities, and landscapes so climate action directly improves livelihoods and ecosystems in Uganda.</p>
+          </div>
+          <a href="carbon-insetting.html" class="inline-flex items-center rounded-full bg-emerald-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-800">Explore Carbon Insetting</a>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-3">
+          <article class="rounded-2xl border border-emerald-100 bg-white p-6 shadow-sm">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-600">Operational Waste</p>
+            <h4 class="mt-3 text-lg font-bold text-emerald-900">Reduce landfill leakage</h4>
+            <p class="mt-2 text-sm text-gray-600">Circular waste systems, wastewater controls, and safer chemical handling.</p>
+          </article>
+          <article class="rounded-2xl border border-emerald-100 bg-white p-6 shadow-sm">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-600">Transport & Energy</p>
+            <h4 class="mt-3 text-lg font-bold text-emerald-900">Cut fuel-linked emissions</h4>
+            <p class="mt-2 text-sm text-gray-600">Cleaner logistics, renewable pilots, and engineering optimizations for local systems.</p>
+          </article>
+          <article class="rounded-2xl border border-emerald-100 bg-white p-6 shadow-sm">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-600">End of Life</p>
+            <h4 class="mt-3 text-lg font-bold text-emerald-900">Recover value, lower methane</h4>
+            <p class="mt-2 text-sm text-gray-600">Wastewater treatment, composting, and recovery pathways that avoid open dumping.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-emerald-50 py-16 sm:py-20">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div class="mb-10 max-w-3xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">Uganda Environmental Snapshot</p>
+          <h3 class="mt-3 text-3xl font-extrabold text-emerald-950 sm:text-4xl">Interactive Pie Charts Based on Uganda Statistics</h3>
+          <p class="mt-4 text-sm text-gray-600">These charts highlight key national indicators from World Bank Data for Uganda. Hover each chart to inspect values.</p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3" id="uganda-chart-grid">
+          <article class="rounded-2xl border border-emerald-100 bg-white p-6 shadow-sm">
+            <div class="mb-4 flex items-center justify-between">
+              <h4 class="font-bold text-emerald-900">Forest Area</h4>
+              <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">2023</span>
+            </div>
+            <div class="h-64">
+              <canvas id="chart-forest" aria-label="Uganda forest area share chart"></canvas>
+            </div>
+            <p class="mt-4 text-xs text-gray-500">Value: 11.0% of land area (World Bank).</p>
+          </article>
+
+          <article class="rounded-2xl border border-emerald-100 bg-white p-6 shadow-sm">
+            <div class="mb-4 flex items-center justify-between">
+              <h4 class="font-bold text-emerald-900">Access to Electricity</h4>
+              <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">2023</span>
+            </div>
+            <div class="h-64">
+              <canvas id="chart-electricity" aria-label="Uganda access to electricity chart"></canvas>
+            </div>
+            <p class="mt-4 text-xs text-gray-500">Value: 51.5% of population with access (World Bank).</p>
+          </article>
+
+          <article class="rounded-2xl border border-emerald-100 bg-white p-6 shadow-sm md:col-span-2 xl:col-span-1">
+            <div class="mb-4 flex items-center justify-between">
+              <h4 class="font-bold text-emerald-900">Freshwater Withdrawal Pressure</h4>
+              <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">2022</span>
+            </div>
+            <div class="h-64">
+              <canvas id="chart-water" aria-label="Uganda freshwater withdrawals chart"></canvas>
+            </div>
+            <p class="mt-4 text-xs text-gray-500">Value: 2% of internal freshwater resources withdrawn (World Bank).</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[var(--forest-900)] py-16 text-white sm:py-20">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div class="mb-8 text-center">
+          <p class="text-sm uppercase tracking-[0.18em] text-green-200">Recorded Impact</p>
+          <p class="mt-1 text-xs text-green-300">Updated for the current reporting cycle</p>
+        </div>
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-2xl border border-white/15 bg-white/5 p-6 text-center backdrop-blur">
+            <p class="text-4xl font-extrabold text-green-300" data-count="2450">0</p>
+            <p class="mt-2 text-sm uppercase tracking-wider text-green-100">Trees Planted</p>
+          </div>
+          <div class="rounded-2xl border border-white/15 bg-white/5 p-6 text-center backdrop-blur">
+            <p class="text-4xl font-extrabold text-green-300" data-count="52">0</p>
+            <p class="mt-2 text-sm uppercase tracking-wider text-green-100">Community Trainings</p>
+          </div>
+          <div class="rounded-2xl border border-white/15 bg-white/5 p-6 text-center backdrop-blur">
+            <p class="text-4xl font-extrabold text-green-300" data-count="24">0</p>
+            <p class="mt-2 text-sm uppercase tracking-wider text-green-100">Partner Schools</p>
+          </div>
+          <div class="rounded-2xl border border-white/15 bg-white/5 p-6 text-center backdrop-blur">
+            <p class="text-4xl font-extrabold text-green-300" data-count="680">0</p>
+            <p class="mt-2 text-sm uppercase tracking-wider text-green-100">Youth Volunteers</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 sm:py-20" x-data="{ open: 1 }">
+      <div class="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2 lg:items-start lg:px-10">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--leaf-500)]">Frequently Asked Questions</p>
+          <h3 class="mt-3 text-3xl font-extrabold text-[var(--forest-900)] sm:text-4xl">How You Can Join the Mission</h3>
+          <p class="mt-4 text-gray-600">We are building a strong youth movement for environmental stewardship and practical innovation in Uganda.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="rounded-xl border border-green-100">
+            <button @click="open = open === 1 ? 0 : 1" class="flex w-full items-center justify-between px-5 py-4 text-left font-semibold text-[var(--forest-900)]">
+              Who can volunteer with EcoGUARD?
+              <i class="fa-solid fa-chevron-down transition" :class="{ 'rotate-180': open === 1 }"></i>
+            </button>
+            <p x-show="open === 1" x-transition class="px-5 pb-4 text-sm leading-relaxed text-gray-600">Students, professionals, and community members are all welcome to support clean-ups, tree planting, trainings, and awareness campaigns.</p>
+          </div>
+          <div class="rounded-xl border border-green-100">
+            <button @click="open = open === 2 ? 0 : 2" class="flex w-full items-center justify-between px-5 py-4 text-left font-semibold text-[var(--forest-900)]">
+              What kinds of projects do you run?
+              <i class="fa-solid fa-chevron-down transition" :class="{ 'rotate-180': open === 2 }"></i>
+            </button>
+            <p x-show="open === 2" x-transition class="px-5 pb-4 text-sm leading-relaxed text-gray-600">We run environmental education, renewable energy pilots, waste management activities, and practical conservation programs.</p>
+          </div>
+          <div class="rounded-xl border border-green-100">
+            <button @click="open = open === 3 ? 0 : 3" class="flex w-full items-center justify-between px-5 py-4 text-left font-semibold text-[var(--forest-900)]">
+              How can organizations partner with you?
+              <i class="fa-solid fa-chevron-down transition" :class="{ 'rotate-180': open === 3 }"></i>
+            </button>
+            <p x-show="open === 3" x-transition class="px-5 pb-4 text-sm leading-relaxed text-gray-600">Organizations can collaborate through funding, mentorship, training support, equipment donations, and co-designed field projects.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative overflow-hidden bg-gradient-to-r from-[var(--forest-700)] to-[var(--forest-900)] py-14">
+      <div class="absolute -left-10 top-1/2 h-48 w-48 -translate-y-1/2 rounded-full bg-green-300/20 blur-3xl"></div>
+      <div class="absolute -right-10 top-1/2 h-48 w-48 -translate-y-1/2 rounded-full bg-lime-200/20 blur-3xl"></div>
+      <div class="relative mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-6 text-center sm:flex-row sm:text-left lg:px-10">
+        <div>
+          <h3 class="text-2xl font-extrabold text-white sm:text-3xl">Ready to Shape Uganda's Green Transformation?</h3>
+          <p class="mt-2 text-green-100">Join our community of builders, volunteers, and climate action champions.</p>
+        </div>
+        <a href="contact.html" class="inline-flex shrink-0 items-center rounded-full bg-white px-6 py-3 font-bold text-[var(--forest-900)] transition hover:bg-green-100">
+          Contact EcoGUARD
+        </a>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer Placeholder -->
   <div id="footer-placeholder"></div>
 
-  <!-- Load the JS script -->
-  <script src="js/header.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="js/load-components.js"></script>
+  <script src="js/site-config.js"></script>
+  <script src="js/form-submissions.js"></script>
+  <script src="js/site-interactions.js"></script>
 </body>
-
 </html>

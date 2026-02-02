@@ -1,43 +1,53 @@
-<!-- components/footer.html -->
-<footer class="bg-gradient-to-b from-green-900 to-green-950 text-white">
-  <div class="container mx-auto px-4 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-      <!-- Brand -->
-      <div>
-        <img src="assets/Ecoguard Initiative Uganda Logo - Earthy Aesthetic (1) (1).png" alt="EcoGUARD" class="h-16 mb-4">
-        <p class="text-green-200 text-sm leading-relaxed max-w-xs">
-          Youth-led environmental movement using engineering, science, and community action to protect Uganda’s future.
+﻿<!-- components/footer.html -->
+<footer class="relative overflow-hidden bg-gradient-to-b from-emerald-950 via-green-950 to-emerald-900 text-green-50">
+  <div class="absolute -left-10 top-16 h-48 w-48 rounded-full bg-emerald-400/10 blur-3xl"></div>
+  <div class="absolute -right-10 bottom-10 h-48 w-48 rounded-full bg-lime-300/10 blur-3xl"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 py-14">
+    <div class="grid gap-10 lg:grid-cols-4">
+      <div class="lg:col-span-2">
+        <img src="assets/Ecoguard Initiative Uganda Logo - Earthy Aesthetic (1) (1).png" alt="EcoGUARD" class="h-16 w-auto">
+        <p class="mt-4 max-w-xl text-sm leading-relaxed text-green-200">
+          EcoGUARD Initiative Uganda is a youth-led environmental movement using engineering, science, and community action to restore ecosystems, improve livelihoods, and build climate resilience.
         </p>
+        <div class="mt-5 flex items-center gap-2">
+          <a href="https://www.facebook.com/ecoguardinitiativeuganda" target="_blank" rel="noopener noreferrer" aria-label="EcoGUARD Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 hover:bg-white/20 transition"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://x.com/ecoguarduganda" target="_blank" rel="noopener noreferrer" aria-label="EcoGUARD X" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 hover:bg-white/20 transition"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/ecoguardinitiativeuganda" target="_blank" rel="noopener noreferrer" aria-label="EcoGUARD Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 hover:bg-white/20 transition"><i class="fab fa-instagram"></i></a>
+        </div>
       </div>
 
-      <!-- Quick Links -->
       <div>
-        <h3 class="text-lg font-semibold mb-5 text-green-300">Quick Links</h3>
-        <ul class="space-y-3">
-          <li><a href="/" class="hover:text-green-400 transition">Home</a></li>
-          <li><a href="about.html" class="hover:text-green-400 transition">About Us</a></li>
-          <li><a href="programs.html" class="hover:text-green-400 transition">What We Do</a></li>
-          <li><a href="get-involved.html" class="hover:text-green-400 transition">Get Involved</a></li>
-          <li><a href="donate.html" class="hover:text-green-400 transition">Donate</a></li>
+        <h3 class="text-base font-semibold text-emerald-200">Quick Links</h3>
+        <ul class="mt-4 space-y-2 text-sm text-green-200">
+          <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-white transition">About</a></li>
+          <li><a href="programs.html" class="hover:text-white transition">Programs</a></li>
+          <li><a href="carbon-insetting.html" class="hover:text-white transition">Carbon Insetting</a></li>
+          <li><a href="objectives.html" class="hover:text-white transition">Objectives</a></li>
+          <li><a href="get-involved.html" class="hover:text-white transition">Get Involved</a></li>
+          <li><a href="donate.html" class="hover:text-white transition">Donate</a></li>
         </ul>
       </div>
 
-      <!-- Contact -->
       <div>
-        <h3 class="text-lg font-semibold mb-5 text-green-300">Contact Us</h3>
-        <div class="space-y-3 text-green-100">
-          <p><i class="fas fa-map-marker-alt mr-2"></i> Plot 1926, Ktaliiwajjala Zone A, Kampala</p>
-          <p><i class="fas fa-phone-alt mr-2"></i> +256 393 194 062</p>
-          <p><i class="fas fa-envelope mr-2"></i> <a href="mailto:info@ecoguardinitiativeuganda.org" class="hover:text-green-400">info@ecoguardinitiativeuganda.org</a></p>
-          <!-- <p><i class="far fa-clock mr-2"></i> Monday – Saturday: 9am – 6pm</p> -->
+        <h3 class="text-base font-semibold text-emerald-200">Stay Connected</h3>
+        <div class="mt-4 space-y-2 text-sm text-green-200">
+          <p><i class="fas fa-map-marker-alt mr-2"></i> Ishongororo, Ibanda District, Uganda</p>
+          <p><i class="fas fa-phone-alt mr-2"></i> +256 740 316227</p>
+          <p><i class="fas fa-envelope mr-2"></i> info@ecoguardinitiativeuganda.org</p>
         </div>
+        <form data-submit-form="newsletter" class="mt-5 flex rounded-full border border-white/20 bg-white/10 p-1">
+          <input type="hidden" name="source" value="Footer Newsletter" />
+          <input type="email" name="email" required placeholder="Your email" class="w-full bg-transparent px-3 text-sm text-white placeholder:text-green-200 focus:outline-none" />
+          <button type="submit" class="rounded-full bg-emerald-500 px-4 py-2 text-xs font-semibold text-white hover:bg-emerald-400 transition">Join</button>
+        </form>
       </div>
     </div>
 
-    <div class="mt-12 pt-8 border-t border-green-800 text-center text-sm text-green-300">
-      © <span id="year"></span> EcoGUARD Initiative Uganda. All rights reserved.
+    <div class="mt-12 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-green-300">
+      <p>&copy; <span id="year"></span> EcoGUARD Initiative Uganda. All rights reserved.</p>
+      <p>Designed for impact, climate resilience, and youth leadership.</p>
     </div>
   </div>
-
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </footer>

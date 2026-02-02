@@ -1,69 +1,89 @@
-<!-- components/header.html -->
-<header class="sticky top-0 z-50 bg-white shadow-md">
-  <!-- Top contact bar -->
-  <div class="bg-green-800 text-white text-sm py-2">
-    <div class="container mx-auto px-4 flex flex-wrap justify-between items-center gap-4">
-      <div class="flex flex-wrap gap-x-6 gap-y-1">
-        <span><i class="fas fa-map-marker-alt mr-1"></i> Plot 1926, Ktaliiwajjala Zone A</span>
-        <span><i class="fas fa-phone-alt mr-1"></i> +256 393 194 062</span>
-        <span><i class="fas fa-envelope mr-1"></i> info@ecoguardinitiativeuganda.org</span>
+﻿<!-- components/header.html -->
+<header class="md:sticky md:top-0 z-50">
+  <div class="bg-gradient-to-r from-emerald-950 via-green-900 to-emerald-800 text-green-50">
+    <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-2 text-xs sm:text-sm">
+      <div class="flex flex-wrap gap-x-5 gap-y-1">
+        <span><i class="fas fa-map-marker-alt mr-1"></i> Ishongororo, Ibanda District, Uganda</span>
+        <a href="tel:+256740316227" class="hover:text-white transition"><i class="fas fa-phone-alt mr-1"></i> +256 740 316227</a>
+        <a href="mailto:info@ecoguardinitiativeuganda.org" class="hover:text-white transition"><i class="fas fa-envelope mr-1"></i> info@ecoguardinitiativeuganda.org</a>
       </div>
-      <div class="flex gap-4">
-        <a href="#" class="hover:text-green-300 transition"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="hover:text-green-300 transition"><i class="fab fa-x-twitter"></i></a>
-        <a href="#" class="hover:text-green-300 transition"><i class="fab fa-instagram"></i></a>
+      <div class="flex items-center gap-2">
+        <a href="https://www.facebook.com/ecoguardinitiativeuganda" target="_blank" rel="noopener noreferrer" aria-label="EcoGUARD Facebook" class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/10 hover:bg-white/20 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/ecoguarduganda" target="_blank" rel="noopener noreferrer" aria-label="EcoGUARD X" class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/10 hover:bg-white/20 transition"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/ecoguardinitiativeuganda" target="_blank" rel="noopener noreferrer" aria-label="EcoGUARD Instagram" class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/10 hover:bg-white/20 transition"><i class="fab fa-instagram"></i></a>
+        <button type="button" data-theme-toggle class="inline-flex h-8 items-center gap-1 rounded-full border border-white/20 bg-white/10 px-3 text-xs font-semibold hover:bg-white/20 transition" aria-label="Toggle theme">
+          <i class="fas fa-moon" data-theme-icon></i>
+          <span data-theme-label>Dark</span>
+        </button>
       </div>
     </div>
   </div>
 
-  <!-- Main navigation -->
-  <nav class="bg-white" x-data="{ open: false, dropdownOpen: false }">
-    <div class="container mx-auto px-4">
-      <div class="flex justify-between items-center h-20">
-        <!-- Logo -->
-        <a href="/" class="flex items-center">
-          <img src="assets/Ecoguard Initiative Uganda Logo - Earthy Aesthetic (1) (1).png" alt="EcoGUARD" class="h-14 w-auto">
+  <nav class="border-b border-emerald-100 bg-white/95 backdrop-blur-md" x-data="{ open: false, dropdownOpen: false, mobileDropdownOpen: false }">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="flex h-20 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/Ecoguard Initiative Uganda Logo - Earthy Aesthetic (1) (1).png" alt="EcoGUARD" class="h-12 w-auto sm:h-14">
+          <span class="hidden text-sm font-semibold tracking-wide text-emerald-900 md:block">EcoGUARD Initiative Uganda</span>
         </a>
 
-        <!-- Hamburger (mobile) -->
-        <button @click="open = !open" class="lg:hidden text-green-800 focus:outline-none" aria-label="Toggle menu" :aria-expanded="open">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" x-show="!open"></path>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" x-show="open"></path>
-          </svg>
+        <button @click="open = !open" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-emerald-200 text-emerald-900 lg:hidden" aria-label="Toggle menu" :aria-expanded="open.toString()">
+          <i class="fas fa-bars" x-show="!open"></i>
+          <i class="fas fa-xmark" x-show="open"></i>
         </button>
 
-        <!-- Menu items -->
-        <div class="hidden lg:flex lg:items-center lg:space-x-10 absolute lg:static top-full left-0 w-full lg:w-auto bg-white lg:bg-transparent shadow-lg lg:shadow-none mt-2 lg:mt-0 p-6 lg:p-0" :class="{ 'block': open, 'hidden': !open }" x-show.transition="open" @click.outside="open = false">
-          <div class="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
-            <a href="/" class="text-gray-800 hover:text-green-700 font-medium transition">Home</a>
-            <a href="about.html" class="text-gray-800 hover:text-green-700 font-medium transition">About</a>
+        <div class="hidden items-center gap-8 lg:flex">
+          <a href="index.html" class="font-medium text-gray-700 transition hover:text-emerald-700">Home</a>
+          <a href="about.html" class="font-medium text-gray-700 transition hover:text-emerald-700">About</a>
 
-            <!-- Dropdown -->
-            <div class="relative group">
-              <button @click="dropdownOpen = !dropdownOpen" class="text-gray-800 hover:text-green-700 font-medium transition flex items-center gap-1" :class="{ 'text-green-700': dropdownOpen }">
-                What We Do
-                <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': dropdownOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-              <div class="absolute left-0 mt-2 w-64 bg-white shadow-xl rounded-lg py-2 transition-all duration-200" :class="{ 'opacity-100 visible scale-100': dropdownOpen, 'opacity-0 invisible scale-95': !dropdownOpen }" @click.outside="dropdownOpen = false">
-                <a href="programs.html#waste" class="block px-5 py-2.5 text-gray-700 hover:bg-green-50 hover:text-green-700">Engineering-based Waste Management</a>
-                <a href="programs.html#tree" class="block px-5 py-2.5 text-gray-700 hover:bg-green-50 hover:text-green-700">Tree Planting & Reforestation</a>
-                <a href="programs.html#water" class="block px-5 py-2.5 text-gray-700 hover:bg-green-50 hover:text-green-700">Water Conservation Projects</a>
-                <a href="programs.html#energy" class="block px-5 py-2.5 text-gray-700 hover:bg-green-50 hover:text-green-700">Renewable Energy Solutions</a>
-                <a href="programs.html#innovation" class="block px-5 py-2.5 text-gray-700 hover:bg-green-50 hover:text-green-700">Eco-Innovation Labs</a>
-                <a href="programs.html#education" class="block px-5 py-2.5 text-gray-700 hover:bg-green-50 hover:text-green-700">Environmental Education</a>
-                <a href="programs.html#cleanup" class="block px-5 py-2.5 text-gray-700 hover:bg-green-50 hover:text-green-700">Clean-Up Campaigns</a>
-                <a href="programs.html#entrepreneurship" class="block px-5 py-2.5 text-gray-700 hover:bg-green-50 hover:text-green-700">Green Entrepreneurship</a>
-              </div>
+          <div class="relative">
+            <button @click="dropdownOpen = !dropdownOpen" class="flex items-center gap-1 font-medium text-gray-700 transition hover:text-emerald-700" :class="{ 'text-emerald-700': dropdownOpen }">
+              Programs
+              <i class="fas fa-chevron-down text-xs transition-transform" :class="{ 'rotate-180': dropdownOpen }"></i>
+            </button>
+            <div class="absolute left-0 mt-3 w-72 rounded-xl border border-emerald-100 bg-white p-2 shadow-xl" x-show="dropdownOpen" @click.outside="dropdownOpen = false" x-transition>
+              <a href="programs.html#waste" class="block rounded-lg px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700">Engineering-based Waste Management</a>
+              <a href="programs.html#tree" class="block rounded-lg px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700">Tree Planting & Reforestation</a>
+              <a href="programs.html#water" class="block rounded-lg px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700">Water Conservation Projects</a>
+              <a href="programs.html#energy" class="block rounded-lg px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700">Renewable Energy Solutions</a>
+              <a href="programs.html#nutrition" class="block rounded-lg px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700">Nutrition & Climate-Smart Food Systems</a>
+              <a href="programs.html#entrepreneurship" class="block rounded-lg px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700">Green Entrepreneurship</a>
             </div>
-
-            <a href="objectives.html" class="text-gray-800 hover:text-green-700 font-medium transition">Objectives</a>
-            <a href="get-involved.html" class="text-gray-800 hover:text-green-700 font-medium transition">Get Involved</a>
-            <a href="contact.html" class="text-gray-800 hover:text-green-700 font-medium transition">Contact</a>
-            <a href="donate.html" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-full font-semibold transition">Donate</a>
           </div>
+
+          <a href="objectives.html" class="font-medium text-gray-700 transition hover:text-emerald-700">Objectives</a>
+          <a href="carbon-insetting.html" class="font-medium text-gray-700 transition hover:text-emerald-700">Carbon Insetting</a>
+          <a href="get-involved.html" class="font-medium text-gray-700 transition hover:text-emerald-700">Get Involved</a>
+          <a href="contact.html" class="font-medium text-gray-700 transition hover:text-emerald-700">Contact</a>
+          <a href="donate.html" class="inline-flex items-center justify-center rounded-full bg-emerald-700 px-6 py-2.5 font-semibold text-white transition hover:bg-emerald-800">Donate</a>
+        </div>
+      </div>
+
+      <div class="border-t border-emerald-100 py-5 lg:hidden" x-show="open" x-transition>
+        <div class="space-y-2">
+          <a href="index.html" class="block rounded-lg px-3 py-2 font-medium text-gray-700 hover:bg-emerald-50 hover:text-emerald-700">Home</a>
+          <a href="about.html" class="block rounded-lg px-3 py-2 font-medium text-gray-700 hover:bg-emerald-50 hover:text-emerald-700">About</a>
+
+          <div>
+            <button @click="mobileDropdownOpen = !mobileDropdownOpen" class="flex w-full items-center justify-between rounded-lg px-3 py-2 font-medium text-gray-700 hover:bg-emerald-50 hover:text-emerald-700">
+              Programs
+              <i class="fas fa-chevron-down text-xs transition-transform" :class="{ 'rotate-180': mobileDropdownOpen }"></i>
+            </button>
+            <div class="ml-3 mt-2 space-y-1 border-l border-emerald-100 pl-3" x-show="mobileDropdownOpen" x-transition>
+              <a href="programs.html#waste" class="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-emerald-50 hover:text-emerald-700">Waste Management</a>
+              <a href="programs.html#tree" class="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-emerald-50 hover:text-emerald-700">Reforestation</a>
+              <a href="programs.html#water" class="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-emerald-50 hover:text-emerald-700">Water Conservation</a>
+              <a href="programs.html#energy" class="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-emerald-50 hover:text-emerald-700">Renewable Energy</a>
+              <a href="programs.html#nutrition" class="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-emerald-50 hover:text-emerald-700">Nutrition Program</a>
+              <a href="programs.html#entrepreneurship" class="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-emerald-50 hover:text-emerald-700">Green Entrepreneurship</a>
+            </div>
+          </div>
+
+          <a href="objectives.html" class="block rounded-lg px-3 py-2 font-medium text-gray-700 hover:bg-emerald-50 hover:text-emerald-700">Objectives</a>
+          <a href="carbon-insetting.html" class="block rounded-lg px-3 py-2 font-medium text-gray-700 hover:bg-emerald-50 hover:text-emerald-700">Carbon Insetting</a>
+          <a href="get-involved.html" class="block rounded-lg px-3 py-2 font-medium text-gray-700 hover:bg-emerald-50 hover:text-emerald-700">Get Involved</a>
+          <a href="contact.html" class="block rounded-lg px-3 py-2 font-medium text-gray-700 hover:bg-emerald-50 hover:text-emerald-700">Contact</a>
+          <a href="donate.html" class="mt-3 inline-flex w-full items-center justify-center rounded-full bg-emerald-700 px-6 py-2.5 font-semibold text-white transition hover:bg-emerald-800">Donate</a>
         </div>
       </div>
     </div>
